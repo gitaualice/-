@@ -60,8 +60,8 @@ This was my first time connecting a website to a database. I built it step by st
 You need Python 3 installed.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
+git clone https://github.com/gitaualice/photography-portfolio.git
+cd photography-portfolio.git
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
