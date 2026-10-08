@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Gitau | Photography Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Alice Gitau</h1>
+    <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="gallery">
+        <h2>My Gallery</h2>
+        <p class="gallery-intro">sunsets, mountains &amp; little everyday moments</p>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="urban">Urban</button>
+        </div>
+
+        <!-- all the photos -->
+        <div class="photo-grid">
+            <img loading="lazy" src="images/Sunset3People.jpg" alt="Three people at a dock during a sunset" data-category="nature">
+            <img loading="lazy" src="images/manFishingDuringSunset.jpg" alt="A man fishing during a sunset" data-category="nature">
+            <img loading="lazy" src="images/MountRanier.jpg" alt="Mountain range in the Pacific Northwest" data-category="nature">
+            <img loading="lazy" src="images/moodLightedRoom.JPG" alt="An urban scene with moody lighting" data-category="urban">
+            <img loading="lazy" src="images/thriftStore.jpeg" alt="A thrift store interior" data-category="urban">
+            <img loading="lazy" src="images/TainTracks.JPG" alt="Train tracks in the countryside" data-category="nature">
+            <img loading="lazy" src="images/sunsetAtClif.JPG" alt="A cliff during a sunset" data-category="nature">
+            <img loading="lazy" src="images/IceGlasours.JPG" alt="Ice glaciers in the mountains" data-category="nature">
+            <img loading="lazy" src="images/hiking.jpeg" alt="A person hiking in the mountains" data-category="nature">
+            <img loading="lazy" src="images/elephants.JPG" alt="Elephants in the wild" data-category="nature">
+            <img loading="lazy" src="images/oneElephante.JPG" alt="One elephant" data-category="nature">
+            <img loading="lazy" src="images/Castle.jpg" alt="A castle" data-category="nature">
+            <img loading="lazy" src="images/BusSide.JPG" alt="The side of a bus" data-category="urban">
+            <img loading="lazy" src="images/FruitMarket.JPG" alt="A fruit market scene" data-category="urban">
+            <img loading="lazy" src="images/YellowDressPicnic.jpg" alt="A yellow dress picnic scene" data-category="urban">
+            <img loading="lazy" src="images/YellowDressPicnic2.jpg" alt="A yellow dress picnic scene from a different angle" data-category="urban">
+            <img loading="lazy" src="images/DancerConcert.jpg" alt="A dancer at a concert" data-category="urban">
+            <img loading="lazy" src="images/ConcertSinger.jpg" alt="A Madison Beer singer at a concert" data-category="urban">
+        </div>
+    </section>
+
+    <section id="contact" class="home-contact">
+        <h2>Contact</h2>
+        <p>Want to book a shoot? <a href="contact.html">Send me a request</a> or email
+           <a href="mailto:gitaualice@outlook.com">gitaualice@outlook.com</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Alice Gitau. All rights reserved.</p>
+</footer>
+
+<!-- Full-screen photo viewer -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="close" aria-label="Close">&times;</button>
+    <button class="lb-arrow lb-prev" aria-label="Previous photo">&#8249;</button>
+
+    <figure class="lb-figure">
+        <img id="lightbox-img" alt="">
+        <figcaption>
+            <span id="lightbox-caption"></span>
+            <span id="lightbox-counter" class="lb-counter"></span>
+        </figcaption>
+    </figure>
+
+    <button class="lb-arrow lb-next" aria-label="Next photo">&#8250;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

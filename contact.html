@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Alice Gitau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="about-page">
+
+<header>
+    <h1>Alice Gitau</h1>
+    <nav>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">get in touch!</h2>
+        <p class="contact-intro">Book a shoot or just say hi.</p>
+
+        <form class="contact-form" id="contact-form">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="shoot_type">type of shoot</label>
+            <select id="shoot_type" name="shoot_type" required>
+                <option value="" disabled selected>choose one</option>
+                <option value="headshots">Headshots</option>
+                <option value="event">Event</option>
+                <option value="senior">Senior portraits</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="shoot_date">preferred date <span class="optional">(optional)</span></label>
+                    <input type="date" id="shoot_date" name="shoot_date">
+                </div>
+                <div class="form-field">
+                    <label for="location">location</label>
+                    <select id="location" name="location">
+                        <option value="unsure" selected>Not sure yet</option>
+                        <option value="campus">On campus</option>
+                        <option value="outdoors">Outdoors</option>
+                        <option value="studio">Indoors / studio</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="message">tell me about it!</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <!-- Hidden from people; spam bots fill it in and get ignored -->
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button type="submit">send</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+
+        <p class="contact-direct">or email me directly at <a href="mailto:gitaualice@outlook.com">gitaualice@outlook.com</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Alice Gitau. All rights reserved.</p>
+</footer>
+
+<script src="contact.js"></script>
+</body>
+</html>

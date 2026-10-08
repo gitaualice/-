@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Bookings{% endblock %}
+
+{% block content %}
+<section class="inbox-section">
+    <form method="post" action="/logout" class="inbox-logout">
+        <button>log out</button>
+    </form>
+
+    <h2 class="contact-title">bookings</h2>
+
+    <!-- Quick stats -->
+    <div class="inbox-stats-row">
+        <div class="stat">
+            <span class="stat-num">{{ this_month }}</span>
+            <span class="stat-label">requests this month</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">{{ counts.booked }}</span>
+            <span class="stat-label">booked</span>
+        </div>
+        <div class="stat">
+            <span class="stat-num">{{ popular or "–" }}</span>
+            <span class="stat-label">most requested</span>
+        </div>
+    </div>
+
+    <!-- Filter by status -->
+    <nav class="status-filters">
+        <a href="/messages" class="{{ 'active' if not current }}">all ({{ total }})</a>
+        {% for s in statuses %}
+        <a href="/messages?status={{ s }}" class="{{ 'active' if current == s }}">{{ s }} ({{ counts[s] }})</a>
+        {% endfor %}
+    </nav>
+
+    <!-- One card per booking request -->
+    {% for m in messages %}
+    <article class="inbox-card status-{{ m.status }}">
+        <div class="inbox-meta">
+            <strong>{{ m.name }}</strong>
+            <a href="mailto:{{ m.email }}">{{ m.email }}</a>
+            <time>sent {{ m.created_at[:10] }}</time>
+        </div>
+
+        <div class="inbox-tags">
+            <span class="tag">{{ shoot_types.get(m.shoot_type, m.shoot_type) }}</span>
+            <span class="tag">{{ m.shoot_date or "no date yet" }}</span>
+            <span class="tag">{{ locations.get(m.location, m.location) }}</span>
+        </div>
+
+        <p class="inbox-message">{{ m.message }}</p>
+
+        <div class="inbox-actions">
+            <form method="post" action="/messages/{{ m.id }}/status">
+                <label class="sr-only" for="status-{{ m.id }}">Status</label>
+                <select id="status-{{ m.id }}" name="status" onchange="this.form.submit()">
+                    {% for s in statuses %}
+                    <option value="{{ s }}" {{ 'selected' if m.status == s }}>{{ s }}</option>
+                    {% endfor %}
+                </select>
+                <noscript><button>save</button></noscript>
+            </form>
+
+            <form method="post" action="/messages/{{ m.id }}/delete"
+                  onsubmit="return confirm('Delete this request?')">
+                <button class="danger">delete</button>
+            </form>
+        </div>
+    </article>
+    {% else %}
+    <p class="inbox-empty">Nothing here yet!</p>
+    {% endfor %}
+</section>
+{% endblock %}
