@@ -52,6 +52,22 @@ This was my first time connecting a website to a database. I built it step by st
 - Why you should **never put passwords in your code**
 - How to make a page look good on both **phones and computers**
 - How to use **Git and GitHub** to save and share my work
+## Screenshots
+
+**Gallery**
+![Gallery](screenshots/gallery.png)
+
+**Photo viewer**
+![Photo viewer](screenshots/viewer.png)
+
+**Booking form**
+![Booking form](screenshots/booking.png)
+
+**My AboutMe page**
+![Bookings page](screenshots/about.png) 
+
+**My Login page**
+![Bookings page](screenshots/login.png) 
 
 ---
 
